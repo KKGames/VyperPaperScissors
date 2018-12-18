@@ -2,20 +2,20 @@
 # @notice
 
 # game struct
-games: public({
-    wager: wei_value,
-    state: uint256,
-    hashedMove: bytes32[address],
-    openMove: uint256[address]
-}[bytes32])
+struct Game:
+    wager: wei_value
+    state: uint256
+    hashedMove: map(address, bytes32)
+    openMove: map(address, uint256)
+
 
 # wei owed
-moneys: public(wei_value[address])
+moneys: public(map(address, wei_value))
 
 # win/loss/tie evaluations
-evaluation: public(uint256[bytes32])
+evaluation: public(map(bytes32, uint256))
 
-
+games : public(map(bytes32, Game))
 owner: public(address)
 
 # --------------------------------Public getters-------------------------------
