@@ -16,3 +16,21 @@ Move into folder and install package requirements
 
 Run tests:
 `python test.py`
+
+
+# Testing
+
+To store ABI changes made to contract:
+```
+vyper -f abi RPS.vy > rps.json
+```
+
+To store Bytecode changes:
+```
+vyper - bytecode RPS.vy > rps.bin
+```
+
+Run tests:
+```
+python test.py
+```
